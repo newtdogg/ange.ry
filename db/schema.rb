@@ -20,4 +20,11 @@ ActiveRecord::Schema.define(version: 20180115153846) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "ratings", force: :cascade do |t|
+    t.integer "stars"
+    t.text "review"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
 end
