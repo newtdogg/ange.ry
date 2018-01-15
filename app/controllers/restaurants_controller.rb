@@ -4,6 +4,10 @@ class RestaurantsController < ApplicationController
     @restaurant = Restaurant.find(params[:id])
   end
 
+  def index
+    @restaurants = Restaurant.all()
+  end
+
   def new
 
   end
@@ -14,6 +18,13 @@ class RestaurantsController < ApplicationController
     @restaurant.save
     redirect_to @restaurant
   end
+
+  # def destroy
+  #   @restaurant = Restaurant.find(params[:id])
+  #   @restaurant.destroy()
+  #
+  #   redirect
+  # end
 
   private
 
