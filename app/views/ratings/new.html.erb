@@ -1,0 +1,21 @@
+
+<%= form_with scope: :rating, url: ratings_path, local: true do |form| %>
+  <p>
+    <%= form.label :rating %><br>
+    <%= form.radio_button :stars, 1, id: "1" %>
+    <%= form.radio_button :stars, 2, id: "2" %>
+    <%= form.radio_button :stars, 3, id: "3" %>
+    <%= form.radio_button :stars, 4, id: "4" %>
+    <%= form.radio_button :stars, 5, id: "5" %>
+
+  </p>
+
+  <p>
+    <%= form.label :review %><br>
+    <%= form.text_area :review %>
+  </p>
+
+  <p>
+    <%= form.submit %>
+  </p>
+<% end %>
