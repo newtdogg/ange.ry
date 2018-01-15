@@ -1,5 +1,5 @@
-feature 'Viewing links by tag' do
-  scenario "should filter links by tags" do
+feature 'Reviews' do
+  scenario "a user can rate..." do
     visit '/ratings/new'
     find('#5').click
     fill_in('rating[review]', with: "wow nice")
@@ -7,4 +7,5 @@ feature 'Viewing links by tag' do
     expect(page).to have_content('Rating: 5')
     expect(page).to have_content('Review: wow nice')
   end
+
 end
