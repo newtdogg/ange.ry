@@ -2,7 +2,11 @@
 
 <% @ratings.each do |rating| %>
   <div>
-    Rating: <p><%= rating.stars %></p>
-    Review: <p><%= rating.review %></p>
+    <strong>Rating:</strong> <%= rating.stars %>
+    <p> <strong>Review:</strong> <%= rating.review %></p>
+    <p><%= link_to 'Destroy', restaurant_rating_path(id: rating.id),
+            method: :delete,
+            data:{ confirm: 'Are you sure?' } %>
+    </p>
   </div>
 <% end %>
