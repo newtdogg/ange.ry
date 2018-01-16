@@ -1,0 +1,8 @@
+<h1><%= pluralize(@ratings.count, "Review") %></h1>
+
+<% @ratings.each do |rating| %>
+  <div>
+    <p><%= rating.stars %></p>
+    <p><%= rating.review %></p>
+  </div>
+<% end %>

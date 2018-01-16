@@ -1,8 +1,11 @@
 Rails.application.routes.draw do
   get 'welcome/index'
 
-  resources :ratings
-  resources :restaurants
+  #resources :ratings
+
+  resources :restaurants do
+    resources :ratings
+  end
 
   root "welcome#index"
 
