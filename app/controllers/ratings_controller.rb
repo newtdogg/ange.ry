@@ -1,7 +1,6 @@
 class RatingsController < ApplicationController
   def index
     @ratings = Rating.where(restaurant_id: params[:restaurant_id])
-    p @ratings
   end
 
   def show
@@ -14,7 +13,6 @@ class RatingsController < ApplicationController
 
   def create
     @rating = Rating.new(rating_params.merge(restaurant_id: params[:restaurant_id]))
-    p @rating.errors
     if @rating.save
       redirect_to restaurant_ratings_path
     else
