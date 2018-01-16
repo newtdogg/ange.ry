@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180116124845) do
+ActiveRecord::Schema.define(version: 20180116154240) do
 
   create_table "ratings", force: :cascade do |t|
     t.integer "stars"
@@ -24,6 +24,15 @@ ActiveRecord::Schema.define(version: 20180116124845) do
     t.string "name"
     t.string "location"
     t.text "desc"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "users", force: :cascade do |t|
+    t.string "username"
+    t.string "email"
+    t.string "encrypted_password"
+    t.string "salt"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

@@ -3,6 +3,7 @@ Rails.application.routes.draw do
 
   resources :ratings
   resources :restaurants
+  resources :users
 
   root "welcome#index"
 
