@@ -5,6 +5,7 @@
     <p><%= restaurant.name %></p>
     <p><%= restaurant.location %></p>
     <p><%= restaurant.desc %></p>
+    <p><%= (restaurant.ratings.inject(0){|sum, i| sum + i.stars} / (restaurant.ratings.count).to_f).round(1) %></p>
     <p><%= link_to 'Destroy', restaurant_path(restaurant),
             method: :delete,
             data:{ confirm: 'Are you sure?' } %>

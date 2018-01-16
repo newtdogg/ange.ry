@@ -31,7 +31,6 @@ feature 'Restaurant edit' do
     click_on 'Save Restaurant'
     click_link('Edit')
     fill_in 'restaurant[name]', with: "A different test name"
-    click_on 'Update Restaurant'
     expect(page).to have_content "A different test name" 
   end
 end
