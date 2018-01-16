@@ -16,7 +16,7 @@ class RestaurantsController < ApplicationController
     @restaurant = Restaurant.new(restaurant_params)
 
     @restaurant.save
-    redirect_to "welcome#index"
+    redirect_to "/"
   end
 
   def destroy
