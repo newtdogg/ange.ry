@@ -1,5 +1,5 @@
 
-<%= form_with scope: :rating, url: ratings_path, local: true do |form| %>
+<%= form_with scope: :rating, url: restaurant_ratings_path, local: true do |form| %>
   <p>
     <%= form.label :rating %><br>
     <%= form.radio_button :stars, 1, id: "1" %>
@@ -13,11 +13,6 @@
   <p>
     <%= form.label :review %><br>
     <%= form.text_area :review %>
-  </p>
-
-  <p>
-    <%= form.label :restaurant_id %><br>
-    <%= form.text_area :restaurant_id %>
   </p>
 
   <p>
