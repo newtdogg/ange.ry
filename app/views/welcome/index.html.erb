@@ -9,6 +9,8 @@
     <p><%= link_to 'Destroy', restaurant_path(restaurant),
             method: :delete,
             data:{ confirm: 'Are you sure?' } %>
+    <p><%= link_to 'Edit', edit_restaurant_path(restaurant) %></p>
+
     </p>
   </div>
 <% end %>
