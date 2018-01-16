@@ -10,7 +10,7 @@ class RatingsController < ApplicationController
   def create
     @rating = Rating.new(rating_params)
     if @rating.save
-      redirect_to @rating
+      redirect_to @restaurants
     else
       render 'new'
     end
