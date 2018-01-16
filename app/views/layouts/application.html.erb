@@ -9,6 +9,9 @@
   </head>
 
   <body>
+    <% if @user != nil %>
+    <h2>Welcome <%=@user.username%></h2>
+    <% end %>
     <%= yield %>
   </body>
 </html>

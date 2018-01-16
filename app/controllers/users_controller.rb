@@ -1,3 +1,5 @@
+require 'bcrypt' 
+
 class UsersController < ApplicationController
   def new
   end
@@ -8,9 +10,13 @@ class UsersController < ApplicationController
 
   def create
     @user = User.new(user_params)
-    encrypt(@user.password)
-    @user.save
-    redirect_to '/'
+    encrypt(@user.encrypted_password)
+    if @user.save
+      session[:user_id] = @user.id
+      redirect_to '/'
+    else
+      redirect_to '/users/new'
+    end
   end
 
   def edit
@@ -29,7 +35,8 @@ class UsersController < ApplicationController
   private
 
   def user_params
-    params.require(:user).permit(:username, :email, :password)
+    p params
+    params.require(:user).permit(:username, :email, :encrypted_password)
   end
 
   def encrypt(password)
