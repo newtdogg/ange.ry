@@ -7,6 +7,18 @@ feature 'Restaurant creation' do
     click_on 'Save Restaurant'
     expect(page).to have_content "Test location"
   end
+
+  scenario 'A user cannot add a new restaurant without a name' do
+    create_a_restaurant(name: '', desc: "borger")
+    visit '/restaurants'
+    expect(page).to_not have_content("borger")
+  end
+
+  scenario 'A user cannot add a new restaurant without a description' do
+    create_a_restaurant(name: "test", desc: '')
+    visit '/restaurants'
+    expect(page).to_not have_content("test")
+  end
 end
 
 feature 'Restaurant deletion' do

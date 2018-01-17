@@ -35,4 +35,10 @@ feature 'Reviews' do
     expect(page).to have_content('Review: wow really not nice')
   end
 
+  scenario 'A user cannot leave a blank rating' do
+    visit 'restaurants/1/ratings/new'
+    fill_in('rating[review]', with: "A rating")
+    click_button('Save Rating')
+    expect(page).to have_button('Save Rating')
+  end
 end
