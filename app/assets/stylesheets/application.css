@@ -13,3 +13,13 @@
  *= require_tree .
  *= require_self
  */
+
+.mainbar {
+  background: linear-gradient(#F75165, #FFDB6B);
+  padding: 10px;
+}
+
+.banner-pic {
+  width: 15%;
+  height: 15%;
+}
