@@ -13,13 +13,55 @@
  *= require_tree .
  *= require_self
  */
+.jumbotron{
+  padding-top: 10px;
+  padding-bottom: 10px;
+  margin-bottom:0px;
+  border-bottom: 4px solid black;
+}
 
 .mainbar {
   background: linear-gradient(#F75165, #FFDB6B);
-  padding: 10px;
+  margin-bottom:0px;
+}
+
+.title {
+  display:inline-block;
 }
 
 .banner-pic {
+  display: inline;
   width: 15%;
   height: 15%;
 }
+
+.userbar .col-sm-2{
+  padding: 0px;
+}
+
+.userbar .col-sm-8{
+  padding: 0px;
+}
+
+
+.user-box{
+  margin: 0px;
+  background-color: #FFDB6B;
+  border-bottom: 4px solid black;
+  border-left: 4px solid black;
+  border-right: 4px solid black;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  height: 10vmin;
+  padding: 10px;
+}
+
+/*.left-blank {
+  margin: 0px;
+  border-top: 4px solid black;
+}
+
+.right-blank {
+  margin: 0px;
+  border-top: 4px solid black;
+}*/
