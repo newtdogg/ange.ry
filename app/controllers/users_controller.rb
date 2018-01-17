@@ -1,4 +1,4 @@
-require 'bcrypt' 
+require 'bcrypt'
 
 class UsersController < ApplicationController
   def new
@@ -35,13 +35,7 @@ class UsersController < ApplicationController
   private
 
   def user_params
-    p params
-    params.require(:user).permit(:username, :email, :encrypted_password)
-  end
-
-  def encrypt(password)
-    salt = BCrypt::Engine.generate_salt
-    encrypted_password = BCrypt::Engine.hash_secret(password, salt)
+    params.require(:user).permit(:username, :email, :password)
   end
 
 end
