@@ -4,6 +4,8 @@
     <title>Yelp</title>
     <%= csrf_meta_tags %>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
 
@@ -21,7 +23,7 @@
         </div>
       </div>
     </div>
-    <div class="row userbar">
+    <nav class="row userbar" data-spy="affix" data-offset-top="146">
       <div class="col-sm-2">
         <div class="container-flex left-blank">
         </div>
@@ -37,7 +39,7 @@
         <div class="container-flex right-blank">
         </div>
       </div>
-    </div>
+    </nav>
     <%= yield %>
 
   </body>
