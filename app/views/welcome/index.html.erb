@@ -12,7 +12,7 @@
         <ul>
           <li><p><%= restaurant.location %></p></li>
           <li><p><%= restaurant.desc %></p></li>
-          <li><p><%= (restaurant.ratings.inject(0){|sum, i| sum + i.stars} / (restaurant.ratings.count).to_f).round(1) %></p></li>
+          <li><p><%= restaurant.ratings.count == 0 ? "No ratings yet!" : ((restaurant.ratings.inject(0){|sum, i| sum + i.stars} / (restaurant.ratings.count).to_f).round(1)) %></p></li>
           <li><p><%= link_to 'Destroy', restaurant_path(restaurant),
                 method: :delete,
                 data:{ confirm: 'Are you sure?' } %>
