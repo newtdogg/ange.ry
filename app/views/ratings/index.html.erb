@@ -4,7 +4,7 @@
   <div>
     <strong>Rating:</strong> <%= rating.stars %>
     <p> <strong>Review:</strong> <%= rating.review %></p>
-    <p><%= link_to 'Destroy', restaurant_rating_path(id: rating.id),
+    <p><%= link_to 'Destroy', user_rating_path(id: rating.id),
             method: :delete,
             data:{ confirm: 'Are you sure?' } %>
     </p>
