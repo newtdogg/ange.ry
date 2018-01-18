@@ -10,13 +10,13 @@ feature 'Restaurant creation' do
 
   scenario 'A user cannot add a new restaurant without a name' do
     create_a_restaurant(name: '', desc: "borger")
-    visit '/restaurants'
+    visit '/'
     expect(page).to_not have_content("borger")
   end
 
   scenario 'A user cannot add a new restaurant without a description' do
     create_a_restaurant(name: "test", desc: '')
-    visit '/restaurants'
+    visit '/'
     expect(page).to_not have_content("test")
   end
 end
@@ -24,7 +24,7 @@ end
 feature 'Restaurant deletion' do
   scenario 'A user can delete an existing restaurant' do
     create_a_restaurant
-    visit '/restaurants'
+    visit '/'
     click_link('Destroy')
     expect(page).not_to have_content "location"
   end
@@ -33,7 +33,7 @@ end
 feature 'Restaurant edit' do
   scenario 'A user can edit the details of a restaurant' do
     create_a_restaurant
-    visit '/restaurants'
+    visit '/'
     click_link('Edit')
     fill_in 'restaurant[name]', with: "A different test name"
     click_on 'Update Restaurant'

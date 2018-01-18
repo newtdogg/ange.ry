@@ -1,5 +1,6 @@
 
 def sign_up(username: "angery_man", email: "testemail@test.com", password: "test", password_confirmation: "test")
+  visit '/users/new'
   fill_in('user[username]', with: username)
   fill_in('user[email]', with: email)
   fill_in('user[password]', with: password)
