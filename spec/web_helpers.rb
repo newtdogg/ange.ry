@@ -8,8 +8,8 @@ def sign_up(username: "angery_man", email: "testemail@test.com", password: "test
   click_button('Signup')
 end
 
-def create_a_restaurant(name: "name", location: "location", desc: "borger")
-  Restaurant.create(name: name, location: location, desc: desc)
+def create_a_restaurant(name: "name", location: "location", desc: "borger", img: "")
+  Restaurant.create(name: name, location: location, desc: desc, img: img)
 end
 
 def leave_a_review(stars: 5, rating: 'A generic review')

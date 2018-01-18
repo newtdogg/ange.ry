@@ -19,6 +19,12 @@ feature 'Restaurant creation' do
     visit '/'
     expect(page).to_not have_content("test")
   end
+
+  scenario "A user can add a photo of the restaurant" do
+    create_a_restaurant(name: "test", desc: 'borger', img: "https://pbs.twimg.com/media/CgldEYQU8AA2MPn.jpg")
+    visit '/'
+    expect(page).to have_xpath("//img[contains(@src,'https://pbs.twimg.com/media/CgldEYQU8AA2MPn.jpg')]")
+  end
 end
 
 feature 'Restaurant deletion' do

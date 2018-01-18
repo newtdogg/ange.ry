@@ -66,36 +66,18 @@
       padding-top: 70px;
   }
 
-  .rating-faces{
+  #rating-faces{
     height: 30px;
     width: 30px;
   }
 
-  label > input{ /* HIDE RADIO */
-  visibility: hidden; /* Makes input not-clickable */
-  position: absolute; /* Remove input from document flow */
-}
+
+
 label > input + img{ /* IMAGE STYLES */
   cursor:pointer;
-  border:2px solid transparent;
-}
-label > input:checked + img{ /* (RADIO CHECKED) IMAGE STYLES */
-  border: 2px solid #000000;
-  border-radius: 15px;
+  border: 2px solid transparent;
 }
 
-.rating > label {
-  opacity: 0.5;
-}
-
-.rating > input:checked ~ label, /* show gold star when clicked */
-.rating:not(:checked) > label:hover, /* hover current star */
-.rating:not(:checked) > label:hover ~ label { opacity: 1;  } /* hover previous stars in list */
-
-.rating > input:checked + label:hover, /* hover current star when changing rating */
-.rating > input:checked ~ label:hover,
-.rating > label:hover ~ input:checked ~ label, /* lighten current selection */
-.rating > input:checked ~ label:hover ~ label { opacity: 1;  }
 
 /*.left-blank {
   margin: 0px;
