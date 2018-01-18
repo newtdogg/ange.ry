@@ -6,6 +6,18 @@
     <div class="col-sm-8">
     <h1> Restaurants </h1>
     <div class="row">
+
+    <% if logged_in? %>
+    
+    <%= @current_user.username %>
+
+      <li><%= link_to "Log out", logout_path, method: :delete %></li>
+
+    <% else %>
+      <li><%= link_to "Sign up", new_user_path %></li>
+      <li><%= link_to "Log in", sessions_new_path %></li>
+    <% end %>
+
     <% @restaurants.each do |restaurant| %>
       <div class="col-sm-4">
         <p><%= restaurant.name %></p>
