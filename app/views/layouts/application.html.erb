@@ -3,15 +3,44 @@
   <head>
     <title>Yelp</title>
     <%= csrf_meta_tags %>
-
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+
   </head>
 
   <body>
-    <% if @username != nil %>
-      <h2>Welcome <%=@username%></h2>
-    <% end %>
+    <div class="jumbotron mainbar">
+      <div class="row">
+        <div class="col-sm-2">
+        </div>
+          <div class="col-sm-8">
+            <div><h2 class="title">Ange.ry</h2><%= image_tag("banner.png", :class => "banner-pic")%></div>
+          </div>
+        <div class="col-sm-2">
+        </div>
+      </div>
+    </div>
+    <nav class="row userbar" data-spy="affix" data-offset-top="146">
+      <div class="col-sm-2">
+        <div class="container-flex left-blank">
+        </div>
+      </div>
+      <div class="col-sm-8">
+        <div class="container-flex user-box">
+          <% if @username != nil %>
+            <p>Welcome <%=@username%></p>
+          <% end %>
+        </div>
+      </div>
+      <div class="col-sm-2">
+        <div class="container-flex right-blank">
+        </div>
+      </div>
+    </nav>
     <%= yield %>
+
   </body>
 </html>

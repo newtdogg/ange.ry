@@ -13,3 +13,96 @@
  *= require_tree .
  *= require_self
  */
+.jumbotron{
+  padding-top: 10px;
+  padding-bottom: 10px;
+  margin-bottom:0px;
+  border-bottom: 4px solid black;
+}
+
+.mainbar {
+  background: linear-gradient(#F75165, #FFDB6B);
+  margin-bottom:0px;
+}
+
+.title {
+  display:inline-block;
+}
+
+.banner-pic {
+  display: inline;
+  width: 15%;
+  height: 15%;
+}
+
+.userbar .col-sm-2{
+  padding: 0px;
+}
+
+.userbar .col-sm-8{
+  padding: 0px;
+}
+
+
+.user-box{
+  margin: 0px;
+  background-color: #FFDB6B;
+  border-bottom: 4px solid black;
+  border-left: 4px solid black;
+  border-right: 4px solid black;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  height: 10vmin;
+  padding: 10px;
+}
+
+  .affix {
+      top: 0;
+      width: 100%;
+      z-index: 9999 !important;
+  }
+
+  .affix + .container-fluid {
+      padding-top: 70px;
+  }
+
+  .rating-faces{
+    height: 30px;
+    width: 30px;
+  }
+
+  label > input{ /* HIDE RADIO */
+  visibility: hidden; /* Makes input not-clickable */
+  position: absolute; /* Remove input from document flow */
+}
+label > input + img{ /* IMAGE STYLES */
+  cursor:pointer;
+  border:2px solid transparent;
+}
+label > input:checked + img{ /* (RADIO CHECKED) IMAGE STYLES */
+  border: 2px solid #000000;
+  border-radius: 15px;
+}
+
+.rating > label {
+  opacity: 0.5;
+}
+
+.rating > input:checked ~ label, /* show gold star when clicked */
+.rating:not(:checked) > label:hover, /* hover current star */
+.rating:not(:checked) > label:hover ~ label { opacity: 1;  } /* hover previous stars in list */
+
+.rating > input:checked + label:hover, /* hover current star when changing rating */
+.rating > input:checked ~ label:hover,
+.rating > label:hover ~ input:checked ~ label, /* lighten current selection */
+.rating > input:checked ~ label:hover ~ label { opacity: 1;  }
+
+/*.left-blank {
+  margin: 0px;
+  border-top: 4px solid black;
+}
+
+.right-blank {
+  margin: 0px;
+  border-top: 4px solid black;
+}*/
