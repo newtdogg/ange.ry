@@ -14,9 +14,8 @@ class RatingsController < ApplicationController
   def create
     @rating = Rating.new(rating_params.merge(restaurant_id: params[:restaurant_id], user_id: current_user().id))
     if @rating.save
-      redirect_to restaurant_ratings_path
+      redirect_to restaurant_ratings_path()
     else
-      p @rating.errors
       render 'new'
     end
   end
@@ -25,7 +24,7 @@ class RatingsController < ApplicationController
     @rating = Rating.find(params[:id])
     @rating.destroy()
 
-    redirect_to restaurant_ratings_path
+    redirect_to restaurant_ratings_path(params[:restaurant_id])
   end
   private
 
