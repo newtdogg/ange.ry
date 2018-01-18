@@ -48,7 +48,7 @@ feature 'Reviews' do
     expect(page).to have_button('Save Rating')
   end
 
-  scenario "a user can rate 1 stars..." do
+  scenario "Username is displayed with review" do
     sign_up
     visit 'restaurants/1/ratings/new'
     leave_a_review(stars: 1, rating: 'wow really not nice')
