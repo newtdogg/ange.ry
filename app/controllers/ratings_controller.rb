@@ -12,10 +12,11 @@ class RatingsController < ApplicationController
   end
 
   def create
-    @rating = Rating.new(rating_params.merge(restaurant_id: params[:restaurant_id]))
+    @rating = Rating.new(rating_params.merge(restaurant_id: params[:restaurant_id], user_id: current_user().id))
     if @rating.save
       redirect_to restaurant_ratings_path
     else
+      p @rating.errors
       render 'new'
     end
   end
