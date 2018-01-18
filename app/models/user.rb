@@ -3,4 +3,5 @@ class User < ApplicationRecord
   validates :email, presence: true, uniqueness: true, format: {with: /@/}
 
   has_secure_password
+  has_many :ratings, dependent: :destroy
 end
