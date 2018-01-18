@@ -5,9 +5,14 @@ class Restaurant < ApplicationRecord
   # Destroys all related ratings on deletion
   has_many :ratings, dependent: :destroy
 
-  def calculate_average_rating(id)
-    restaurant = Restaurant.find(id)
-    restaurant.ratings.count == 0 ? "No ratings yet!" : ((restaurant.ratings.inject(0){|sum, i| sum + i.stars} / (restaurant.ratings.count).to_f).round(1))
+  def get_average_rating
+    calculate_average_rating
+  end
+
+  private
+
+  def calculate_average_rating
+    self.ratings.count == 0 ? "No ratings yet!" : ((self.ratings.inject(0){|sum, i| sum + i.stars} / (self.ratings.count).to_f).round(1))
   end
 
 
