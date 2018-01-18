@@ -2,6 +2,7 @@
 
 <% @ratings.each do |rating| %>
   <div>
+    <strong>Review by: <%= current_user.username %></strong>
     <strong>Rating:</strong> <%= rating.stars %>
     <p> <strong>Review:</strong> <%= rating.review %></p>
     <p><%= link_to 'Destroy', user_rating_path(id: rating.id),
