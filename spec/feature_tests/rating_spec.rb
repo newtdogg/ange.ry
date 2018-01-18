@@ -47,4 +47,13 @@ feature 'Reviews' do
     click_button('Save Rating')
     expect(page).to have_button('Save Rating')
   end
+
+  scenario "a user can rate 1 stars..." do
+    sign_up
+    visit 'restaurants/1/ratings/new'
+    leave_a_review(stars: 1, rating: 'wow really not nice')
+    expect(page).to have_content('Review by: angery_man')
+    expect(page).to have_content('Rating: 1')
+    expect(page).to have_content('Review: wow really not nice')
+  end
 end
