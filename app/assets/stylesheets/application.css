@@ -29,8 +29,37 @@ a:link {
   margin-bottom:0px;
 }
 
+.main-link{
+  cursor: auto;
+}
+
 .title {
-  display:inline-block;
+  /*display:inline-block;*/
+  margin: 0px;
+  color:black;
+  cursor: pointer;
+}
+
+.title:hover {
+    color: red;
+    /* Start the shake animation and make the animation last for 0.5 seconds */
+    animation: shake 0.5s;
+    /* When the animation is finished, start again */
+    animation-iteration-count: infinite;
+}
+
+@keyframes shake {
+    0% { transform: translate(1px, 1px) rotate(0deg); }
+    10% { transform: translate(-1px, -2px) rotate(-1deg); }
+    20% { transform: translate(-3px, 0px) rotate(1deg); }
+    30% { transform: translate(3px, 2px) rotate(0deg); }
+    40% { transform: translate(1px, -1px) rotate(1deg); }
+    50% { transform: translate(-1px, 2px) rotate(-1deg); }
+    60% { transform: translate(-3px, 1px) rotate(0deg); }
+    70% { transform: translate(3px, 1px) rotate(-1deg); }
+    80% { transform: translate(-1px, -1px) rotate(1deg); }
+    90% { transform: translate(1px, 2px) rotate(0deg); }
+    100% { transform: translate(1px, -2px) rotate(-1deg); }
 }
 
 .user-title {
@@ -40,9 +69,10 @@ a:link {
 }
 
 .banner-pic {
-  display: inline-block;
+  /*display: inline;*/
   width: 15%;
   height: 15%;
+  cursor: pointer;
 }
 
 .userbar .col-sm-2{
@@ -202,14 +232,3 @@ label > input + img{ /* IMAGE STYLES */
   cursor:pointer;
   border: 2px solid transparent;
 }
-
-
-/*.left-blank {
-  margin: 0px;
-  border-top: 4px solid black;
-}
-
-.right-blank {
-  margin: 0px;
-  border-top: 4px solid black;
-}*/
