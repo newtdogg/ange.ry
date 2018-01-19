@@ -1,13 +1,22 @@
-<h1><%= @restaurant.name%> </h1>
-<ul>
-  <li><p><%= @restaurant.location %></p></li>
-  <li><p><%= @restaurant.desc %></p></li>
-  <li><p><%= @restaurant.ratings.count == 0 ? "No ratings yet!" : ((@restaurant.ratings.inject(0){|sum, i| sum + i.stars} / (@restaurant.ratings.count).to_f).round(1)) %></p></li>
+<div class="row">
+  <div class="col-sm-2">
+  </div>
+  <div class="col-sm-8">
+    <h1><%= @restaurant.name%> </h1>
+    <ul>
+      <li><p><%= @restaurant.location %></p></li>
+      <li><p><%= @restaurant.desc %></p></li>
+      <li><p><%= @restaurant.ratings.count == 0 ? "No ratings yet!" : ((@restaurant.ratings.inject(0){|sum, i| sum + i.stars} / (@restaurant.ratings.count).to_f).round(1)) %></p></li>
 
-<%if @restaurant.did_i_make_this?(current_user.id) %>
-  <li><p><%= link_to 'Destroy', restaurant_path(@restaurant),
-        method: :delete,
-        data:{ confirm: 'Are you sure?' } %>
-<p><%= link_to 'Edit', edit_restaurant_path(@restaurant) %></p>
-<% end %>
-</ul>
+    <%if @restaurant.did_i_make_this?(current_user.id) %>
+      <li><p><%= link_to 'Destroy', restaurant_path(@restaurant),
+            method: :delete,
+            data:{ confirm: 'Are you sure?' } %>
+    <p><%= link_to 'Edit', edit_restaurant_path(@restaurant) %></p>
+    <% end %>
+    <p><%= link_to 'Review', new_restaurant_rating_path(@restaurant.id) %></p>
+    </ul>
+  </div>
+  <div class="col-sm-2">
+  </div>
+</div>
