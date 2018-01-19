@@ -13,8 +13,9 @@ class RestaurantsController < ApplicationController
   end
 
   def create
-    @restaurant = Restaurant.new(restaurant_params)
+    @restaurant = Restaurant.new(restaurant_params.merge(user_id: current_user().id))
     @restaurant.save
+    p @restaurant.errors
     redirect_to "/"
   end
 
