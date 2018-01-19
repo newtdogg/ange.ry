@@ -30,7 +30,7 @@ end
 feature 'Restaurant deletion' do
   scenario 'A user can delete an existing restaurant' do
     create_a_restaurant
-    visit '/'
+    visit '/restaurants/1'
     click_link('Destroy')
     expect(page).not_to have_content "location"
   end
@@ -39,7 +39,7 @@ end
 feature 'Restaurant edit' do
   scenario 'A user can edit the details of a restaurant' do
     create_a_restaurant
-    visit '/'
+    visit '/restaurants/1'
     click_link('Edit')
     fill_in 'restaurant[name]', with: "A different test name"
     click_on 'Update Restaurant'

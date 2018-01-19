@@ -33,7 +33,7 @@
           <% if logged_in? %>
           <ul>
             <div class="user-title"><p><%= @current_user.username %></p></div>
-            
+
 
               <li><%= link_to "Log out", logout_path, method: :delete %></li>
 
@@ -49,6 +49,11 @@
         </div>
       </div>
     </nav>
+    <div id="errors">
+      <% if flash[:errors] %>
+        <%= flash[:errors] %>
+      <% end %>
+   </div>
     <%= yield %>
 
   </body>

@@ -56,4 +56,9 @@ feature 'Reviews' do
     expect(page).to have_content('Rating: 1')
     expect(page).to have_content('Review: wow really not nice')
   end
+
+  scenario "A user cannot rate a restaurant without logging in " do
+    visit 'restaurants/1/ratings/new'
+    expect(page).to have_content("You must login to review a restaurant")
+  end
 end

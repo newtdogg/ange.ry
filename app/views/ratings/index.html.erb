@@ -2,13 +2,13 @@
 
 <% @ratings.each do |rating| %>
   <div>
-    <strong>Review by: <%= current_user.username %></strong> <br>
+    <strong>Review by: <%= rating.user.username %></strong> <br>
     <strong>Rating:</strong> <%= rating.stars %>
     <p> <strong>Review:</strong> <%= rating.review %></p>
-    <p><%= link_to 'Destroy', user_rating_path(id: rating.id, user_id: current_user().id, restaurant_id: rating.restaurant_id),
+    <p><%= link_to 'Destroy', user_rating_path(id: rating.id, user_id: rating.user_id, restaurant_id: rating.restaurant_id),
             method: :delete,
             data:{ confirm: 'Are you sure?' } %>
     </p>
-    <p><%= link_to 'Edit', edit_user_rating_path(id: rating.id, user_id: current_user().id) %></p>
+    <p><%= link_to 'Edit', edit_user_rating_path(id: rating.id, user_id: rating.user_id) %></p>
   </div>
 <% end %>
