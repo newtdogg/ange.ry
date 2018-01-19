@@ -20,8 +20,39 @@
   border-bottom: 4px solid black;
 }
 
+.user-icon {
+  margin: 10px;
+}
+
 a:link {
     text-decoration: none;
+}
+
+.user-icon-buttons{
+  width: 40px;
+  height: 40px;
+  display: inline-block;
+}
+
+.user-icon > label{
+  display: inline-block;
+}
+
+.user-icon-buttons > label > img{
+  max-width:100%;
+  max-height:100%;
+}
+
+.user-icon-buttons label > input{ /* HIDE RADIO */
+  visibility: hidden; /* Makes input not-clickable */
+  position: absolute; /* Remove input from document flow */
+}
+.user-icon-buttons label > input + img{ /* IMAGE STYLES */
+  cursor:pointer;
+  border:2px solid transparent;
+}
+.user-icon-buttons label > input:checked + img{ /* (RADIO CHECKED) IMAGE STYLES */
+  border:2px solid black;
 }
 
 .mainbar {
