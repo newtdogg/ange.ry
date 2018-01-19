@@ -20,6 +20,10 @@
   border-bottom: 4px solid black;
 }
 
+a:link {
+    text-decoration: none;
+}
+
 .mainbar {
   background: linear-gradient(#F75165, #FFDB6B);
   margin-bottom:0px;
@@ -29,8 +33,14 @@
   display:inline-block;
 }
 
+.user-title {
+  display: inline-block;
+  font-size: 20px;
+  font-weight: bold;
+}
+
 .banner-pic {
-  display: inline;
+  display: inline-block;
   width: 15%;
   height: 15%;
 }
@@ -43,7 +53,6 @@
   padding: 0px;
 }
 
-
 .user-box{
   margin: 0px;
   background-color: #FFDB6B;
@@ -52,9 +61,125 @@
   border-right: 4px solid black;
   border-bottom-left-radius: 10px;
   border-bottom-right-radius: 10px;
+  width: 98%;
   height: 10vmin;
   padding: 10px;
 }
+
+.userbox ul{
+  padding: 10px;
+}
+
+.user-box li{
+  padding-left: 10px;
+  padding-top: 10px;
+  padding-right: 10px;
+  float: right;
+  list-style: none;
+  align-items: inline;
+}
+
+nav .col-sm-2{
+  margin-right: 10px;
+  margin-left: 10px;
+}
+
+/*This section is dedicated to the restaurant tiles*/
+.restaurant-box{
+  width: 100%;
+  height: 180px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  margin-bottom: 20px;
+}
+
+.edit {
+  float:right;
+  width: 25%;
+  background-color: rgba(255,255,255, 0.3);
+  max-height: 100%;
+}
+
+.delete {
+  float:right;
+  width: 25%;
+  background-color: rgba(255,255,255, 0.3);
+  max-height: 100%;
+}
+
+/*This section is for tiles with images*/
+/*This is for the title of tiles */
+.tile-title{
+  top: 35%;
+  text-align: center;
+  position: relative;
+}
+
+.restaurant-image-box {
+  width: 100%;
+  height: 100%;
+  padding-left: 5px;
+  border-radius: 10px;
+  color: white;
+  text-align: center;
+}
+
+.restaurant-image-box ul{
+  opacity: 0;
+}
+
+.restaurant-image-box:hover h2{
+  opacity: 0;
+}
+
+.restaurant-image-box:hover{
+  opacity: 0.7;
+}
+
+.restaurant-image-box:hover ul{
+  opacity: 1;
+  display: inline;
+  position: relative;
+  bottom: 20px;
+}
+
+
+
+.restaurant-box-no-image {
+  width: 100%;
+  height: 100%;
+  padding-left: 5px;
+  border-radius: 10px;
+  color: white;
+  text-align: center;
+}
+
+.restaurant-box-no-image ul{
+  opacity: 0;
+}
+
+
+.restaurant-box-no-image:hover h2{
+  opacity: 0;
+}
+
+.restaurant-box-no-image:hover{
+  opacity: 0.7;
+}
+
+.restaurant-box-no-image:hover ul{
+  opacity: 1;
+  display: inline;
+  position: relative;
+  bottom: 20px;
+}
+
+
+
+
+
+
+
 
   .affix {
       top: 0;

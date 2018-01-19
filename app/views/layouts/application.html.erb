@@ -30,11 +30,18 @@
       </div>
       <div class="col-sm-8">
         <div class="container-flex user-box">
-          <% if @username != nil %>
-            <p>Welcome <%=@username%></p>
-
+          <% if logged_in? %>
+          <ul>
+            <div class="user-title"><p><%= @current_user.username %></p></div>
             
-          <% end %>
+
+              <li><%= link_to "Log out", logout_path, method: :delete %></li>
+
+            <% else %>
+              <li><%= link_to "Sign up", new_user_path %></li>
+              <li><%= link_to "Log in", sessions_new_path %></li>
+            <% end %>
+          </ul>
         </div>
       </div>
       <div class="col-sm-2">

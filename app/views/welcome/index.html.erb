@@ -4,34 +4,33 @@
     <div class="col-sm-2">
     </div>
     <div class="col-sm-8">
-    <h1> Restaurants </h1>
+    <h1 align="center"> Restaurants </h1>
     <div class="row">
-
-    <% if logged_in? %>
-    
-    <%= @current_user.username %>
-
-      <li><%= link_to "Log out", logout_path, method: :delete %></li>
-
-    <% else %>
-      <li><%= link_to "Sign up", new_user_path %></li>
-      <li><%= link_to "Log in", sessions_new_path %></li>
-    <% end %>
 
     <% @restaurants.each do |restaurant| %>
       <div class="col-sm-4">
-        <p><%= restaurant.name %></p>
-        <ul>
-          <li><p><%= restaurant.location %></p></li>
-          <li><p><%= restaurant.desc %></p></li>
-          <li><p><%= restaurant.get_average_rating %></p></li>
-          <li><p><%= link_to 'Destroy', restaurant_path(restaurant),
-                method: :delete,
-                data:{ confirm: 'Are you sure?' } %>
-        <p><%= link_to 'Edit', edit_restaurant_path(restaurant) %></p>
+        <a href="/restaurants/<%=restaurant.id%>">
+        <div class="restaurant-box">
+          <% if restaurant.img != nil %>
+            <div class="restaurant-image-box" style="background: url(<%=restaurant.img %>)50% 50% no-repeat;">
+          <% else %>
+            <div class="restaurant-box-no-image" style="background-color: <%= ['#FFDC6A', '#F65966', '#FB9C69', '#FEBE69', '#FA8969', '#FFCC6A'].sample %>">
+          <% end %>
+            <h2 class="tile-title"><%= restaurant.name %></h2>
+            <ul>
+              <li><p><%= restaurant.location %></p></li>
+              <li><p><%= restaurant.desc[0..40] %>...</p></li>
+              <li><p><%= restaurant.get_average_rating %></p></li>
+            </ul>
+                <!-- <li><p><%= link_to 'Destroy', restaurant_path(restaurant),
+                    method: :delete,
+                    data:{ confirm: 'Are you sure?' } %>
+                <p><%= link_to 'Edit', edit_restaurant_path(restaurant) %></p>
+            </p></li> -->
 
-        </p></li>
-        </ul>
+          </div>
+        </div>
+      </a>
       </div>
     <% end %>
 
