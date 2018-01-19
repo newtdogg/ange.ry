@@ -8,7 +8,10 @@ class RatingsController < ApplicationController
   end
 
   def new
-
+    if !current_user()
+      flash.keep[:errors] = "You must login to review a restaurant"
+      redirect_to restaurant_ratings_path()
+    end
   end
 
   def create

@@ -51,6 +51,11 @@
         </div>
       </div>
     </nav>
+    <div id="errors">
+      <% if flash[:errors] %>
+        <%= flash[:errors] %>
+      <% end %>
+   </div>
     <%= yield %>
 
   </body>
