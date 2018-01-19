@@ -15,9 +15,10 @@ class RatingsController < ApplicationController
   end
 
   def create
-    if prevent_multiple_ratings
+    restaurant = Restaurant.find(params[:restaurant_id])
+    if restaurant.prevent_multiple_ratings(current_user.id)
       flash.keep[:danger] = "You have already rated this restaurant"
-      redirect_to restaurants_path
+      redirect_to restaurant_path(restaurant.id)
     else
       @rating = Rating.new(rating_params.merge(restaurant_id: params[:restaurant_id], user_id: current_user().id))
       if @rating.save

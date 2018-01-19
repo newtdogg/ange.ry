@@ -11,6 +11,15 @@ class Restaurant < ApplicationRecord
     calculate_average_rating
   end
 
+  def prevent_multiple_ratings(id)
+    self.ratings.each do |rating|
+      if rating.user_id == id
+        return true
+      end
+    end
+    false
+  end
+
   private
 
   def calculate_average_rating
