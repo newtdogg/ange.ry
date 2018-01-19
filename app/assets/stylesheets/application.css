@@ -24,6 +24,10 @@ a:link {
     text-decoration: none;
 }
 
+.user-icon label{
+  
+}
+
 .mainbar {
   background: linear-gradient(#F75165, #FFDB6B);
   margin-bottom:0px;

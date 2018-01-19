@@ -7,6 +7,37 @@
   <h1>Sign Up</h1>
   <%= form_for(:user, :html => {:class => 'main-form'}, :url => {:controller => 'users', :action => 'create'}) do |f| %>
     <p> Username:</br> <%= f.text_field :username%> </p>
+    <fieldset class="user-icon">
+      <label>
+        <%= form.radio_button :userpic, "angry-bobby.jpeg", id: "1" %>
+        <%= image_tag("angry-bobby.jpeg")%>
+      </label>
+      <label>
+      <%= form.radio_button :userpic, "angry-emoji.png", id: "2" %>
+      <%= image_tag("angry-emoji.png")%>
+      </label>
+      <label>
+      <%= form.radio_button :userpic, "angry-man.png", id: "3" %>
+      <%= image_tag("angry-man.png")%>
+      </label>
+      <label>
+      <%= form.radio_button :userpic, "angry-mike.jpg", id: "4" %>
+      <%= image_tag("angry-mike.jpg")%>
+      </label>
+      <label>
+      <%= form.radio_button :userpic, "angry-patrick.jpeg", id: "5" %>
+      <%= image_tag("angry-patrick.jpeg")%>
+      </label>
+      <label>
+      <%= form.radio_button :userpic, "angry-square.jpg", id: "6" %>
+      <%= image_tag("angry-square.jpg")%>
+      </label>
+      <label>
+      <%= form.radio_button :userpic, "angry-sun.jpg", id: "7" %>
+      <%= image_tag("angry-sun.jpg")%>
+      </label>
+    </fieldset>
+
     <p> Email:</br> <%= f.email_field :email%> </p>
     <p> Password:</br> <%= f.password_field :password%></p>
     <p> Password Confirmation:</br> <%= f.password_field :password_confirmation%> </p>
