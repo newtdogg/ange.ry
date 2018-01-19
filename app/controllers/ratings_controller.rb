@@ -19,6 +19,7 @@ class RatingsController < ApplicationController
     if @rating.save
       redirect_to restaurant_ratings_path()
     else
+       p @rating.errors
       render 'new'
     end
   end

@@ -1,5 +1,6 @@
 feature 'Restaurant creation' do
   scenario 'A user can add a new restaurant' do
+    sign_up
     visit '/restaurants/new'
     fill_in 'restaurant[name]', with: "Test name"
     fill_in 'restaurant[location]', with: "Test location"
@@ -29,6 +30,7 @@ end
 
 feature 'Restaurant deletion' do
   scenario 'A user can delete an existing restaurant' do
+    sign_up
     create_a_restaurant
     visit '/restaurants/1'
     click_link('Destroy')
@@ -38,6 +40,7 @@ end
 
 feature 'Restaurant edit' do
   scenario 'A user can edit the details of a restaurant' do
+    sign_up
     create_a_restaurant
     visit '/restaurants/1'
     click_link('Edit')
