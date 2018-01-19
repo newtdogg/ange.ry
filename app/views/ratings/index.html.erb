@@ -2,7 +2,8 @@
 
 <% @ratings.each do |rating| %>
   <div>
-    <strong>Review by: <%= rating.user.username %></strong> <br>
+    <% user = User.find(rating.user_id) %>
+    <strong>Review by: <%= user.username %></strong> <br>
     <strong>Rating:</strong> <%= rating.stars %>
     <p> <strong>Review:</strong> <%= rating.review %></p>
     <p><%= link_to 'Destroy', user_rating_path(id: rating.id, user_id: rating.user_id, restaurant_id: rating.restaurant_id),

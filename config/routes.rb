@@ -9,6 +9,9 @@ Rails.application.routes.draw do
 
   #resources :ratings
   resources :users do
+    resources :restaurants
+  end
+  resources :users do
     resources :ratings
   end
   resources :restaurants do

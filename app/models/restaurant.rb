@@ -4,6 +4,8 @@ class Restaurant < ApplicationRecord
   validates :desc, presence: true
   # Destroys all related ratings on deletion
   has_many :ratings, dependent: :destroy
+  belongs_to :user
+
 
   def get_average_rating
     calculate_average_rating
