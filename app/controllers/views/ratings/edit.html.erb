@@ -1,0 +1,38 @@
+
+<%= form_for @rating, url:{action: "update"} do |form| %>
+  <p>
+    <%= form.label :rating %><br>
+    <fieldset class="rating">
+    <label>
+      <%= form.radio_button :stars, 1, id: "1" %>
+      <%= image_tag("angry1.png", :id => "rating-faces")%>
+    </label>
+    <label>
+    <%= form.radio_button :stars, 2, id: "2" %>
+    <%= image_tag("angry1.png", :id => "rating-faces")%>
+    </label>
+    <label>
+    <%= form.radio_button :stars, 3, id: "3" %>
+    <%= image_tag("angry1.png", :id => "rating-faces")%>
+    </label>
+    <label>
+    <%= form.radio_button :stars, 4, id: "4" %>
+    <%= image_tag("angry1.png", :id => "rating-faces")%>
+    </label>
+    <label>
+    <%= form.radio_button :stars, 5, id: "5" %>
+    <%= image_tag("angry1.png", :id => "rating-faces")%>
+    </label>
+  </fieldset>
+
+  </p>
+
+  <p>
+    <%= form.label :review %><br>
+    <%= form.text_area :review %>
+  </p>
+
+  <p>
+    <%= form.submit %>
+  </p>
+<% end %>

@@ -1,0 +1,37 @@
+
+<div class="row">
+  <div class="col-sm-4">
+  </div>
+  <div class="col-sm-4 form-title">
+    <h1>New Restaurant</h1>
+
+    <%= form_with scope: :restaurant, url: restaurants_path , :class => 'main-form', local: true do |form| %>
+      <p>
+        <%= form.label :name %><br>
+        <%= form.text_field :name %>
+      </p>
+
+      <p>
+        <%= form.label :location %> <br>
+        <%= form.text_field :location %> <br>
+      </p>
+
+      <p>
+        <%= form.label :desc %> <br>
+        <%= form.text_field :desc %>
+      </p>
+
+      <p>
+        <%= form.label :image %> <br>
+        <%= form.url_field :img %>
+      </p>
+
+      <p>
+        <%= form.submit %>
+      </p>
+
+    <% end %>
+    <div class="col-sm-4">
+    </div>
+  </div>
+</div>

@@ -2,7 +2,14 @@
 <ul>
   <li><p><%= @restaurant.location %></p></li>
   <li><p><%= @restaurant.desc %></p></li>
-  <li><p><%= @restaurant.ratings.count == 0 ? "No ratings yet!" : ((@restaurant.ratings.inject(0){|sum, i| sum + i.stars} / (@restaurant.ratings.count).to_f).round(1)) %></p></li>
+  <li><p><%= @restaurant.get_average_rating %></p></li>
+  <% if @restaurant.get_average_rating != "No ratings yet!" %>
+    <div>
+      <% @restaurant.get_average_rating.round().times do %>
+          <%= image_tag("angry1.png", :id => "rating-faces")%>
+      <% end %>
+    </div>
+  <% end %>
 
 <%if @restaurant.did_i_make_this?(current_user.id) %>
   <li><p><%= link_to 'Destroy', restaurant_path(@restaurant),

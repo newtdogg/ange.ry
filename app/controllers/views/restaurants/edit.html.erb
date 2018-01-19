@@ -1,0 +1,28 @@
+<h1>Edit Restaurant</h1>
+
+<%= form_for @restaurant do |form| %>
+  <p>
+    <%= form.label :name %><br>
+    <%= form.text_field :name %>
+  </p>
+
+  <p>
+    <%= form.label :location %> <br>
+    <%= form.text_field :location %> <br>
+  </p>
+
+  <p>
+    <%= form.label :desc %> <br>
+    <%= form.text_field :desc %>
+  </p>
+
+  <p>
+    <%= form.label :image %> <br>
+    <%= form.url_field :img %>
+  </p>
+
+  <p>
+    <%= form.submit %>
+  </p>
+
+<% end %>
