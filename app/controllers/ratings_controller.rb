@@ -26,6 +26,20 @@ class RatingsController < ApplicationController
 
     redirect_to restaurant_ratings_path(params[:restaurant_id])
   end
+
+  def edit
+    @rating = Rating.find(params[:id])
+  end
+
+  def update
+    @rating = Rating.find(params[:id])
+    if @rating.update(rating_params)
+      redirect_to restaurant_ratings_path(@rating.restaurant_id)
+    else
+      render 'edit'
+    end
+  end
+
   private
 
   def rating_params

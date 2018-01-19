@@ -2,7 +2,7 @@ feature "Users" do
   scenario "a user can sign up to review" do
     visit('/users/new')
     sign_up()
-    expect(page).to have_content("Welcome angery_man")
+    expect(page).to have_content("angery_man")
   end
 
   scenario "a user cannot sign up with missmatching passwords" do
