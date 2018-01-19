@@ -3,7 +3,6 @@ class Rating < ApplicationRecord
   belongs_to :restaurant
   belongs_to :user
 
-  private
 
   def prevent_multiple_ratings
     restaurant.ratings.each do |rating|

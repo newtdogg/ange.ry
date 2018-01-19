@@ -10,7 +10,7 @@
       <div class="col-sm-4">
         <a href="/restaurants/<%=restaurant.id%>">
         <div class="restaurant-box">
-          <% if restaurant.img != nil %>
+          <% if restaurant.img != "" %>
             <div class="restaurant-image-box" style="background: url(<%=restaurant.img %>)50% 50% no-repeat;">
           <% else %>
             <div class="restaurant-box-no-image" style="background-color: <%= ['#FFDC6A', '#F65966', '#FB9C69', '#FEBE69', '#FA8969', '#FFCC6A'].sample %>">

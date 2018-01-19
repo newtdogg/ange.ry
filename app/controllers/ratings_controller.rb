@@ -58,6 +58,5 @@ class RatingsController < ApplicationController
     Restaurant.find(params[:restaurant_id])
   end
 
-  
 
 end
