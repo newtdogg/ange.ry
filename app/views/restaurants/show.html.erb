@@ -11,10 +11,15 @@
     </div>
   <% end %>
 
-<%if @restaurant.did_i_make_this?(current_user.id) %>
-  <li><p><%= link_to 'Destroy', restaurant_path(@restaurant),
-        method: :delete,
-        data:{ confirm: 'Are you sure?' } %>
-<p><%= link_to 'Edit', edit_restaurant_path(@restaurant) %></p>
-<% end %>
-</ul>
+    <%if @restaurant.did_i_make_this?(current_user.id) %>
+      <li><p><%= link_to 'Destroy', restaurant_path(@restaurant),
+            method: :delete,
+            data:{ confirm: 'Are you sure?' } %>
+    <p><%= link_to 'Edit', edit_restaurant_path(@restaurant) %></p>
+    <% end %>
+    <p><%= link_to 'Review', new_restaurant_rating_path(@restaurant.id) %></p>
+    </ul>
+  </div>
+  <div class="col-sm-2">
+  </div>
+</div>
