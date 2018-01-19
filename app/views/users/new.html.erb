@@ -1,8 +1,11 @@
-
+<div class="row">
+  <div class="col-sm-4">
+  </div>
+  <div class="col-sm-4 form-title">
 <% @page_title = "UserAuth | Signup" %>
 <div class="Sign_Form">
   <h1>Sign Up</h1>
-  <%= form_for(:user, :url => {:controller => 'users', :action => 'create'}) do |f| %>
+  <%= form_for(:user, :html => {:class => 'main-form'}, :url => {:controller => 'users', :action => 'create'}) do |f| %>
     <p> Username:</br> <%= f.text_field :username%> </p>
     <p> Email:</br> <%= f.email_field :email%> </p>
     <p> Password:</br> <%= f.password_field :password%></p>
@@ -10,4 +13,8 @@
     <%= f.submit :Signup %>
   <% end %>
 
+</div>
+<div class="col-sm-4">
+</div>
+</div>
 </div>
