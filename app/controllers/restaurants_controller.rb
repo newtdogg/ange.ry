@@ -23,9 +23,13 @@ class RestaurantsController < ApplicationController
 
   def destroy
     @restaurant = Restaurant.find(params[:id])
-    @restaurant.destroy()
+    if @restaurant.did_i_make_this?(current_user.id)
+      @restaurant.destroy()
+      redirect_to restaurants_path
+    else
+      redirect_to restaurant_path(@restaurant.id)
+    end
 
-    redirect_to restaurants_path
   end
 
   def edit
