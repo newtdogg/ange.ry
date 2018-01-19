@@ -7,7 +7,6 @@ Rails.application.routes.draw do
   post   '/login',   to: 'sessions#create'
   delete '/logout',  to: 'sessions#destroy'
 
-  #resources :ratings
   resources :users do
     resources :restaurants
   end
@@ -15,7 +14,7 @@ Rails.application.routes.draw do
     resources :ratings
   end
   resources :restaurants do
-    resources :ratings
+    resources :ratings, :only => [:index, :new, :create, :destroy, :edit, :update]
   end
 
   root "welcome#index"

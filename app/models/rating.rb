@@ -4,10 +4,7 @@ class Rating < ApplicationRecord
   belongs_to :user
 
   def did_user_make_rating(id)
-    if self.user_id == id
-      return true
-    end
-    false
+    self.user_id == id
   end
 
 end

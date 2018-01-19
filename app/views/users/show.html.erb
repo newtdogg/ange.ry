@@ -11,12 +11,14 @@
           <ul>
             <li><p>Rating: <%= rating.stars %></p></li>
             <li><p>Review: <%= rating.review %></p></li>
+            <%if @user.id == params[:id].to_i %>
             <li><p><%= link_to 'Destroy', user_rating_path(id: rating.id, user_id: rating.user_id, restaurant_id: rating.restaurant_id),
                   method: :delete,
                   data:{ confirm: 'Are you sure?' } %>
           <p><%= link_to 'Edit', edit_restaurant_rating_path(id: rating.id, user_id: rating.user_id, restaurant_id: rating.restaurant_id) %></p>
 
             </p></li>
+            <% end %>
           </ul>
         </div>
         <% end %>

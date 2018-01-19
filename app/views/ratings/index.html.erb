@@ -6,10 +6,12 @@
     <strong>Review by: <%= user.username %></strong> <br>
     <strong>Rating:</strong> <%= rating.stars %>
     <p> <strong>Review:</strong> <%= rating.review %></p>
+    <%if rating.did_user_make_rating(current_user.id) %>
     <p><%= link_to 'Destroy', user_rating_path(id: rating.id, user_id: rating.user_id, restaurant_id: rating.restaurant_id),
             method: :delete,
             data:{ confirm: 'Are you sure?' } %>
     </p>
     <p><%= link_to 'Edit', edit_user_rating_path(id: rating.id, user_id: rating.user_id) %></p>
+    <% end %>
   </div>
 <% end %>

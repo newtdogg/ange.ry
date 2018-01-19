@@ -3,10 +3,6 @@ class RatingsController < ApplicationController
     @ratings = Rating.where(restaurant_id: params[:restaurant_id])
   end
 
-  def show
-    @rating = Rating.find(params[:id])
-  end
-
   def new
     if !current_user()
       flash.keep[:errors] = "You must login to review a restaurant"
@@ -31,9 +27,12 @@ class RatingsController < ApplicationController
 
   def destroy
     @rating = Rating.find(params[:id])
-    @rating.destroy()
-
-    redirect_to restaurant_ratings_path(params[:restaurant_id])
+    if @rating.did_user_make_rating(current_user.id)
+      @rating.destroy()
+      redirect_to restaurant_ratings_path(params[:restaurant_id])
+    else
+      redirect_to restaurant_path(@rating.restaurant_id)
+    end
   end
 
   def edit
