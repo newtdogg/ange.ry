@@ -12,8 +12,8 @@ def create_a_restaurant(name: "name", location: "location", desc: "borger", img:
   Restaurant.create(name: name, location: location, desc: desc, img: img, user_id: user_id)
 end
 
-def leave_a_review(stars: 5, rating: 'A generic review')
-  fill_in('rating[review]', with: rating)
+def leave_a_review(stars: 5, review: 'A generic review')
+  fill_in('rating[review]', with: review)
   find("##{stars}").click
   click_button('Save Rating')
 end

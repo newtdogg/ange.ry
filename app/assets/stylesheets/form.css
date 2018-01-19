@@ -1,0 +1,35 @@
+.form-title{
+  text-align: center;
+}
+
+.main-form input[type=text] {
+  width: 100%;
+  border: none;
+  border-radius: 20px;
+  height: 5vmin;
+  background-color: #ffee9b;
+}
+
+.main-form input[type=url] {
+  width: 100%;
+  border: none;
+  border-radius: 20px;
+  height: 5vmin;
+  background-color: #ffee9b;
+}
+
+.main-form input[type=submit] {
+  border: none;
+  width: 35%;
+  border-radius: 20px;
+  height: 5vmin;
+  background-color: #ffee9b;
+  color: white;
+  transition:.5s;
+}
+
+.main-form input[type=submit]:hover {
+  background-color: #F75165;
+  animation: shake 0.5s;
+  animation-iteration-count: infinite;
+}
