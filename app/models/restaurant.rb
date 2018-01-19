@@ -20,6 +20,13 @@ class Restaurant < ApplicationRecord
     false
   end
 
+  def did_i_make_this?(id)
+    if self.user_id == id
+      return true
+    end
+    false
+  end
+
   private
 
   def calculate_average_rating

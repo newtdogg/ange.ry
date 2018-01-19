@@ -14,30 +14,43 @@ class RestaurantsController < ApplicationController
 
   def create
     @restaurant = Restaurant.new(restaurant_params.merge(user_id: current_user().id))
-    @restaurant.save
-    p @restaurant.errors
-    redirect_to "/"
+    if @restaurant.save
+      redirect_to "/"
+    else
+      render 'new'
+    end
   end
 
   def destroy
     @restaurant = Restaurant.find(params[:id])
-    @restaurant.destroy()
+    if @restaurant.did_i_make_this?(current_user.id)
+      @restaurant.destroy()
+      redirect_to restaurants_path
+    else
+      redirect_to restaurant_path(@restaurant.id)
+    end
 
-    redirect_to restaurants_path
   end
 
   def edit
     @restaurant = Restaurant.find(params[:id])
+    if @restaurant.did_i_make_this?(current_user.id)
+    else
+      redirect_to restaurant_path(@restaurant.id)
+    end
   end
+
 
   def update
     @restaurant = Restaurant.find(params[:id])
-    if @restaurant.update(restaurant_params)
-      redirect_to "/"
-    else
-      render 'edit'
-    end
+
+      if @restaurant.update(restaurant_params)
+        redirect_to "/"
+      else
+        render 'edit'
+      end
   end
+
 
   private
 
