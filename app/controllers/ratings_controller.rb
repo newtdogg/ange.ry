@@ -15,11 +15,16 @@ class RatingsController < ApplicationController
   end
 
   def create
-    @rating = Rating.new(rating_params.merge(restaurant_id: params[:restaurant_id], user_id: current_user().id))
-    if @rating.save
-      redirect_to restaurant_ratings_path()
+    if prevent_multiple_ratings
+      flash.keep[:danger] = "You have already rated this restaurant"
+      redirect_to restaurants_path
     else
-      render 'new'
+      @rating = Rating.new(rating_params.merge(restaurant_id: params[:restaurant_id], user_id: current_user().id))
+      if @rating.save
+        redirect_to restaurant_ratings_path()
+      else
+        render 'new'
+      end
     end
   end
 
@@ -52,4 +57,7 @@ class RatingsController < ApplicationController
   def restaurant
     Restaurant.find(params[:restaurant_id])
   end
+
+  
+
 end
