@@ -4,6 +4,8 @@
 
 .main-form input[type=text] {
   width: 100%;
+  padding-left: 10px;
+  padding-right: 10px;
   border: none;
   border-radius: 20px;
   height: 5vmin;
@@ -12,6 +14,28 @@
 
 .main-form input[type=url] {
   width: 100%;
+  padding-left: 10px;
+  padding-right: 10px;
+  border: none;
+  border-radius: 20px;
+  height: 5vmin;
+  background-color: #ffee9b;
+}
+
+.main-form input[type=email] {
+  width: 100%;
+  padding-left: 10px;
+  padding-right: 10px;
+  border: none;
+  border-radius: 20px;
+  height: 5vmin;
+  background-color: #ffee9b;
+}
+
+.main-form input[type=password] {
+  width: 100%;
+  padding-left: 10px;
+  padding-right: 10px;
   border: none;
   border-radius: 20px;
   height: 5vmin;
@@ -32,4 +56,72 @@
   background-color: #F75165;
   animation: shake 0.5s;
   animation-iteration-count: infinite;
+}
+
+input[type=text] {
+  width: 100%;
+  padding-left: 10px;
+  padding-right: 10px;
+  border: none;
+  border-radius: 20px;
+  height: 5vmin;
+  background-color: #ffee9b;
+}
+
+input[type=url] {
+  width: 100%;
+  padding-left: 10px;
+  padding-right: 10px;
+  border: none;
+  border-radius: 20px;
+  height: 5vmin;
+  background-color: #ffee9b;
+}
+
+textarea {
+  border: none;
+  height: 15vmin;
+  width: 100%;
+  border-radius: 20px;
+  background-color: #E8E8E8;
+  color: grey;
+  padding: 10px;
+}
+
+input[type=submit] {
+  border: none;
+  width: 35%;
+  border-radius: 20px;
+  height: 5vmin;
+  background-color: #ffee9b;
+  color: white;
+  transition:.5s;
+}
+
+input[type=submit]:hover {
+  background-color: #F75165;
+  animation: shake 0.5s;
+  animation-iteration-count: infinite;
+}
+
+
+
+input[type=email] {
+  width: 100%;
+  padding-left: 10px;
+  padding-right: 10px;
+  border: none;
+  border-radius: 20px;
+  height: 5vmin;
+  background-color: #ffee9b;
+}
+
+input[type=password] {
+  width: 100%;
+  padding-left: 10px;
+  padding-right: 10px;
+  border: none;
+  border-radius: 20px;
+  height: 5vmin;
+  background-color: #ffee9b;
 }

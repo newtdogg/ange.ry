@@ -1,4 +1,8 @@
 
+<div class="row">
+  <div class="col-sm-4">
+  </div>
+  <div class="col-sm-4 form-title">
 <%= form_with scope: :rating, url: restaurant_ratings_path, local: true do |form| %>
   <p>
     <%= form.label :rating %><br>
@@ -36,3 +40,8 @@
     <%= form.submit %>
   </p>
 <% end %>
+
+      <div class="col-sm-4">
+      </div>
+    </div>
+</div>

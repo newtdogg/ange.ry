@@ -1,3 +1,8 @@
+<div class="row">
+  <div class="col-sm-4">
+  </div>
+  <div class="col-sm-4 form-title">
+
 <%= form_for @user do |form| %>
   <p>
     <%= form.label :username %><br>
@@ -11,12 +16,12 @@
 
   <p>
     <%= form.label :password %> <br>
-    <%= form.text_field :password %>
+    <%= form.password_field :password %>
   </p>
 
   <p>
     <%= form.label :password_confirmation %> <br>
-    <%= form.text_field :password_confirmation %>
+    <%= form.password_field :password_confirmation %>
   </p>
 
   <p>
@@ -24,3 +29,7 @@
   </p>
 
 <% end %>
+</div>
+<div class="col-sm-4">
+</div>
+</div>
