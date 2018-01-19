@@ -20,6 +20,11 @@ class Restaurant < ApplicationRecord
     false
   end
 
+  # only the user that made the review can edit it
+  def did_user_rate(id)
+    self.rating.user_id == id
+  end
+
   private
 
   def calculate_average_rating

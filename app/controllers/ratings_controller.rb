@@ -38,6 +38,10 @@ class RatingsController < ApplicationController
 
   def edit
     @rating = Rating.find(params[:id])
+    if @rating.did_user_make_rating(current_user.id)
+    else
+      redirect_to restaurant_path(@rating.restaurant_id)
+    end
   end
 
   def update
