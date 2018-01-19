@@ -20,11 +20,13 @@ class Restaurant < ApplicationRecord
     false
   end
 
+  # only the user that made the review can edit it
+  def did_user_rate(id)
+    self.rating.user_id == id
+  end
+
   def did_i_make_this?(id)
-    if self.user_id == id
-      return true
-    end
-    false
+    self.user_id == id
   end
 
   private
