@@ -17,3 +17,10 @@ def leave_a_review(stars: 5, rating: 'A generic review')
   find("##{stars}").click
   click_button('Save Rating')
 end
+
+
+def sign_in(username: "angery_man", password: "test")
+  fill_in('session[username]', with: username)
+  fill_in('session[password]', with: password)
+  click_button("Log in")
+end
