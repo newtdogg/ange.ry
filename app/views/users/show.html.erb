@@ -9,8 +9,8 @@
         <div class="col-sm-4">
           <p><%= Restaurant.find(rating.restaurant_id).name %></p>
           <ul>
-            <li><p><%= rating.stars %></p></li>
-            <li><p><%= rating.review %></p></li>
+            <li><p>Rating: <%= rating.stars %></p></li>
+            <li><p>Review: <%= rating.review %></p></li>
             <li><p><%= link_to 'Destroy', user_rating_path(id: rating.id, user_id: rating.user_id, restaurant_id: rating.restaurant_id),
                   method: :delete,
                   data:{ confirm: 'Are you sure?' } %>

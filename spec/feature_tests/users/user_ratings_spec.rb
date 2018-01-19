@@ -25,7 +25,7 @@ feature "User ratings" do
     leave_a_review
     visit("/users/1")
     expect(page).to have_content('Edit')
-    sign_up("angery_man4", "testemail@aol.com", "testing", "testing")
+    sign_up(username: "angery_man4", email: "test2@test.com")
     visit("/restaurants/1/ratings")
     expect(page).to_not have_content('Edit')
   end
